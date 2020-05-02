@@ -34,9 +34,21 @@ const orm = {
         } catch (error) {
             throw error;
         }
+    },
+
+    updateOne: async function(table,cols,valId){
+        try {
+            
+            let queryString = "UPDATE ?? SET ?? WHERE id = ?";
+
+            let result = await promisePool.query(queryString,[table,cols,valId]);
+
+            return result;
+
+        } catch (error) {
+            throw error;
+        }
     }
-
-
 };
 
 module.exports = orm;
