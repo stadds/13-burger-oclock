@@ -30,6 +30,18 @@ const burger = {
         } catch (error) {
             throw error;
         }
+    },
+
+    updateOne: async function(cols,valId){
+        try {
+            
+            let res = await orm.updateOne("burgers",cols,valId);
+
+            return res;
+            
+        } catch (error) {
+            throw error;
+        }
     }
 };
 
