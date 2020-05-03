@@ -1,0 +1,43 @@
+<header class="container-fluid">
+    <div class="jumbotron justify-content-center">
+        <h1 class="display-4 text-center"><i class="fas fa-hamburger"></i> Burger O'Clock! <i
+                class="fas fa-hamburger"></i></h1>
+        <hr class="my-4">
+        <h2 class="text-center">It's burger time!! <i class="fas fa-clock"></i></h2>
+    </div>
+</header>
+
+<section class="container">
+    <form class="create-burger">
+        <div class="form-group">
+            <label for="burger-txt">Enter a burger you want to eat and click the "Submit" button.</label>
+            <input type="text" class="form-control" id="burger-txt" name="burger-name" rows="3"></input>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Submit</button>
+    </form>
+    <hr>
+</section>
+
+<section class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <ul class="list-group">
+                {{#each burgers}}
+                  {{#unless devoured}}
+                    {{> burgers/burger-block}}
+                  {{/unless}}
+                {{/each}}
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            <ul class="list-group">
+                {{#each burgers}}
+                  {{#if devoured}}
+                    {{> burgers/burger-eaten}}
+                  {{/if}}
+                {{/each}}
+            </ul>
+        </div>
+    </div>
+</section>
