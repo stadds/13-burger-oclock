@@ -45,7 +45,7 @@ $(function () {
 
         $("#char-left").text(`${charLeft} / ${maxCount}`);
 
-        if (charLeft < 11) {
+        if (charLeft < 16) {
             $("#char-left").removeClass("text-muted");
             $("#char-left").addClass("char-warn");
         } else {
