@@ -12,7 +12,7 @@
         <div class="form-group">
             <label for="burger-txt">Enter a burger you want to eat and click the "Submit" button.</label>
             <textarea class="form-control" id="burger-txt" name="name" maxlength="255" rows="2"></textarea>
-            <p id="char-left" class="text-right text-muted sm-text" name="char-left">255 / 255 characters left</p>
+            <p id="char-left" class="text-right text-muted sm-text" name="char-left">255 / 255</p>
         </div>
         <button type="submit" class="btn btn-primary mb-2">Submit</button>
     </form>
@@ -21,7 +21,7 @@
 
 <section class="container">
     <div class="row">
-        <div class="col-md-6">
+        <div class="col-lg-6 mb-2">
             <ul class="list-group">
                 {{#each burgers}}
                   {{#unless devoured}}
@@ -31,7 +31,7 @@
             </ul>
         </div>
 
-        <div class="col-md-6">
+        <div class="col-lg-6">
             <ul class="list-group">
                 {{#each burgers}}
                   {{#if devoured}}
