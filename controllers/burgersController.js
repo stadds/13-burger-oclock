@@ -23,7 +23,7 @@ router.post("/api/burgers", async function (req, res) {
 
     try {
 
-        console.log("in post");
+        // console.log("in post");
 
         let result = await burger.insertOne({ burger_name: req.body.name });
 
@@ -37,6 +37,8 @@ router.post("/api/burgers", async function (req, res) {
 
 router.put("/api/burgers/:id",async function(req,res){
     try {
+
+        // console.log("in put");
 
         let result = burger.updateOne({devoured: true},req.params.id);
 
