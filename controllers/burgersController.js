@@ -19,11 +19,11 @@ router.get("/", async function (req, res) {
 
 });
 
-router.post("api/burgers", async function (req, res) {
+router.post("/api/burgers", async function (req, res) {
 
     try {
 
-        //console.log(req.body.name);
+        console.log("in post");
 
         let result = await burger.insertOne({ burger_name: req.body.name });
 

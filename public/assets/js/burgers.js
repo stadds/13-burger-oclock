@@ -7,7 +7,9 @@ $(function () {
             name: $("#burger-txt").val().trim()
         }
 
-        $.ajax("/api/cats", {
+        console.log(newBurger);
+
+        $.ajax("/api/burgers", {
             type: "POST",
             data: newBurger
         }).then( function (){
