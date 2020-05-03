@@ -39,7 +39,16 @@ const orm = {
     updateOne: async function(table,cols,valId){
         try {
             
-            let queryString = "UPDATE ?? SET ?? WHERE id = ?";
+            if(isNaN(valId)){
+                console.log("Not a num: "+ valId);
+            }
+            else{
+                console.log("num "+ valId);
+                
+            }
+            
+
+            let queryString = "UPDATE ?? SET ? WHERE id = ?";
 
             let result = await promisePool.query(queryString,[table,cols,valId]);
 
