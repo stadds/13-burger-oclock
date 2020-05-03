@@ -35,4 +35,22 @@ router.post("/api/burgers", async function (req, res) {
 
 });
 
+router.put("/api/burgers/:id",async function(req,res){
+    try {
+
+        let result = burger.updateOne({devoured: true},req.params.id);
+
+        if(result.changedRows === 0){
+            return res.status(404).end();
+        } else{
+            res.status(200).end();
+        }
+        
+    } catch (error) {
+        throw error;
+    }
+
+
+});
+
 module.exports = router;
