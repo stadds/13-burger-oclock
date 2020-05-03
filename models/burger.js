@@ -18,6 +18,18 @@ const burger = {
         } catch (error) {
             throw error;
         }
+    },
+
+    insertOne: async function(vals){
+        try {
+            
+            let res = await orm.insertOne("burgers",vals);
+
+            return res;
+
+        } catch (error) {
+            throw error;
+        }
     }
 };
 
