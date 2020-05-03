@@ -23,6 +23,8 @@ router.post("api/burgers", async function (req, res) {
 
     try {
 
+        //console.log(req.body.name);
+
         let result = await burger.insertOne({ burger_name: req.body.name });
 
         res.json({ id: result.insertId });
