@@ -24,11 +24,19 @@ $(function () {
     $(".devour-btn").on("click", function (event) {
 
         let id = $(this).data("id");
+        let currentDevour = $(this).data("devoured");
+
+        console.log("THIS IS: " + currentDevour);
+
+        let newDevourState = {
+            devoured: !currentDevour
+        };
 
         console.log(`burger ${id} pressed.`);
 
         $.ajax("/api/burgers/" + id, {
-            type: "PUT"
+            type: "PUT",
+            data: newDevourState
         }).then(function () {
             console.log(`burger ${id} was devoured!!`);
             location.reload();
