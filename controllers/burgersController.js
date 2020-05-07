@@ -8,7 +8,7 @@ const burger = require("../models/burger.js");
 router.get("/", async function (req, res) {
     try {
         const hbsObject = {};
-        hbsObject.burgers = await burger.selectAll();
+        hbsObject.burgers = await burger.selectAll().catch( e => { console.error(e) } );
 
         console.log(hbsObject);
         res.render("index", hbsObject);
@@ -25,7 +25,7 @@ router.post("/api/burgers", async function (req, res) {
 
         // console.log("in post");
 
-        let result = await burger.insertOne({ burger_name: req.body.name });
+        let result = await burger.insertOne({ burger_name: req.body.name }).catch( e => { console.error(e) } );
 
         res.json({ id: result.insertId });
 
@@ -39,8 +39,18 @@ router.put("/api/burgers/:id",async function(req,res){
     try {
 
         // console.log("in put");
+        let newDevour = false;
+       
+        if(req.body.devoured === "true"){
+            newDevour = true;
+        }
+        else{
+            newDevour = false;
+        }
 
-        let result = burger.updateOne({devoured: true},req.params.id);
+        console.log(newDevour);
+                
+        let result = await burger.updateOne({devoured: newDevour},req.params.id).catch( e => { console.error(e) } );
 
         if(result.changedRows === 0){
             return res.status(404).end();
