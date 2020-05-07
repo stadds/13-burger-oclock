@@ -8,3 +8,6 @@ VALUES
 ;
 
 SELECT * FROM burgers;
+
+--  Original Vegan: impossible patty, american cheese, caramelized onions, dill pickles, special sauce, vrioche bun 
+-- Guadalupe: black bean, roasted corn & poblano patty, alfalfa, guacamole, tomatoes, pickled red onions, sprout bun 
