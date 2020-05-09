@@ -9,7 +9,7 @@ let pool;
 // SET UP POOL CONNECTION
 // =============================================================
 if(process.env.JAWSDB_URL){
-    pool = mysql2.createPool(process.env.JAWSDB_URL);
+    pool = mysql.createPool(process.env.JAWSDB_URL);
 }
 else{
     pool = mysql.createPool({
