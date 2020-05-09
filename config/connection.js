@@ -4,15 +4,22 @@ const mysql = require("mysql2");
 
 require('dotenv').config();
 
+let pool;
+
 // SET UP POOL CONNECTION
 // =============================================================
-const pool = mysql.createPool({
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD,
-    database: process.env.MYSQL_DATABASE
+if(process.env.JAWSDB_URL){
+    pool = mysql2.createPool(process.env.JAWSDB_URL);
+}
+else{
+    pool = mysql.createPool({
+        host: "localhost",,
+        port: "3306",
+        user: "root",
+        password: "root",
+        database: "burgers_db"
 });
+};
 
 const promisePool = pool.promise();
 
