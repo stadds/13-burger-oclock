@@ -1,7 +1,72 @@
+:root {
+    font-size: 20px;
+    --primary: #f6d186;
+    --secondary: #fcf7bb;
+    --third: #cbe2b0;
+    --ketchup: #f19292;
+    --fifth: #be986d;
+    --boxshadow: #00000047;
+    --bodyfont: 'Caveat', cursive;
+    --jumbofont: 'Montserrat', sans-serif;
+  }
+
+body {
+	background-color: #d2fafb;
+    background-image: 
+        repeating-linear-gradient(45deg, transparent, transparent 35px,
+         rgba(255, 255, 255, 0.2) 35px,
+          rgba(255, 255, 255, 0.2) 70px),
+        repeating-linear-gradient(-45deg, transparent, transparent 35px, 
+            rgba(255,255,255,0.4) 35px, 
+            rgba(255,255,255,0.4) 70px);
+    background-attachment: fixed;
+	background-size: 100px 100px;
+}
+
 .sm-text {
     font-size: small;
 }
 
 .char-warn{
     color: red;
+}
+
+.jumbotron{
+    background-color: var(--fifth);
+    color: white;
+    font-family: var(--jumbofont);
+    font-weight: bold;
+}
+
+.badge-primary{
+    background-color: var(--secondary);
+    color: black;
+}
+
+.list-group-item{
+    background-color: var(--third);
+    font-family: var(--bodyfont);
+    font-size: 1.1em;
+}
+
+.btn-primary {
+    background-color: var(--ketchup);
+    border-color: var(--ketchup);
+    color: black;
+    font-weight: bold;
+}
+
+.btn-primary:hover{
+    background-color: var(--ketchup);
+    border-color: var(--ketchup);
+    filter: brightness(85%);
+    color: black;
+    font-weight: bold;
+}
+
+
+form{
+    background-color: var(--primary);
+    padding: 1em;
+    border-radius: .3em ;
 }
